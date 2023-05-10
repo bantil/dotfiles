@@ -1,6 +1,6 @@
 
 <div align="center">
-<img width="30%" src="./assets/catgorl.png">
+<img width="30%" src="./assets/aulii.png">
 </div>
 
 <div align="center">
@@ -13,17 +13,16 @@
 </div>
 
 
-| ![1](./assets/fetch.png) | ![2](./assets/fetch_3.png) |
+| ![1](./assets/s1.png) | ![2](./assets/s2.png) |
 | --- | --- |
-
 
 ### ***Table of Contents***
 
 - **[Table of Contents](#table-of-contents)**
-    - **[Screenshots](#screenshots)**
+    <!-- - **[Screenshots](#screenshots)** -->
     - **[Environment](#environment)**
-    - **[Themes](#theme-change-script)**
     - **[Dependencies](#dependencies)**
+    - **[Pop OS Extra Bootloader Configuration](#pop-os-extras)**
 
 <!-- ### ***Screenshots*** <details>
 <summary><b>Nord</b></summary>
@@ -34,63 +33,18 @@
 
 </details>
 
-<details>
-<summary><b>Rose Pine</b></summary>
-
-| ![ThemeSelector](./assets/rose-pine/theme-selector.png) | ![Nvim](./assets/rose-pine/nvim.png) |
-| --- | --- |
-| ![Zathura](./assets/rose-pine/zathura.png) | ![FileManager](./assets/rose-pine/explorer.png) |
-
-</details>
-
-<details>
-<summary><b>Gruvbox Dark</b></summary>
-
-| ![ThemeSelector](./assets/gruvbox-dark/theme-selector.png) | ![Nvim](./assets/gruvbox-dark/nvim.png) |
-| --- | --- |
-| ![Zathura](./assets/gruvbox-dark/zathura.png) | ![FileManager](./assets/gruvbox-dark/explorer.png) |
-
-</details>
-
-<details>
-<summary><b>Dracula</b></summary>
-
-| ![ThemeSelector](./assets/dracula/theme-selector.png) | ![Nvim](./assets/dracula/nvim.png) |
-| --- | --- |
-| ![Zathura](./assets/dracula/zathura.png) | ![FileManager](./assets/dracula/explorer.png) |
-
-</details>
-
-<details>
-<summary><b>Kanagawa</b></summary>
-
-| ![ThemeSelector](./assets/kanagawa/theme-selector.png) | ![Nvim](./assets/kanagawa/nvim.png) |
-| --- | --- |
-| ![Zathura](./assets/kanagawa/zathura.png) | ![FileManager](./assets/kanagawa/explorer.png) |
-
-</details> -->
+<details> -->
 
 ### ***Environment***
 
-- **Distro**: Linux Mint
-- **Compositor**: Sway
-- **Notifications**: 
-- **Wallpapers**: 
+- **Distro**: Linux Mint/Pop!_OS
+- **Compositor**: Compton
 - **Terminal**: Kitty
-- **File Manager**: 
 - **Editor**: NeoVim
 - **Browser**: Firefox / Brave
 - **Shell**: Zsh
-- **Media Player**: 
 - **App Laucher**: Rofi
-- **Font**: 
-
-
-<details><summary><b>Video</b></summary>
-
-https://user-images.githubusercontent.com/84767665/233387508-3736f857-6653-4071-8576-a6ee342c9a37.mov
-
-</details>
+- **Font**: JetBrainsMonoNFM
 
 ### ***Dependencies***
 
@@ -98,6 +52,7 @@ https://user-images.githubusercontent.com/84767665/233387508-3736f857-6653-4071-
 - g++
 - nvim 0.7.0+
 - oh-my-zsh
+- rofi
 
 ```
 apt install stow
@@ -124,5 +79,14 @@ cd dotfiles/
 
 make all
 ```
+
+### ***Pop OS Extra Bootloader Configuration***
+Since PopOS uses systemd-boot, these instructions are for adding the Windows Boot Manager entry into the systemd-boot record. This will allow us to boot into windows and will also show the boot menu.
+1. ```sudo apt install os-prober```
+2. ```sudo os-prober```. The output is ```/dev/sdb1@/efi/Microsoft/Boot/bootmgfw.efi:Windows Boot Manager:Windows:efi```
+3. ```sudo mount /dev/sdb1 /mnt``` (you can find your drive in the first part of the os-prober's output)
+4. ```sudo cp -ax /mnt/EFI/Microsoft /boot/efi/EFI``` (you can find the folder after the word ```efi``` in os-prober's output. It's always ```Microsoft``` but you need capital ```EFI``` when copying.
+5. Add this line ```timeout 10``` at the end of ```sudo vim /boot/efi/loader/loader.conf```
+6. Reboot.
 
 <div align="center"><img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/footers/gray0_ctp_on_line.png"></div>
