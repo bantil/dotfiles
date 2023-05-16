@@ -38,7 +38,6 @@
 ### ***Environment***
 
 - **Distro**: Linux Mint/Pop!_OS
-- **Compositor**: Compton
 - **Terminal**: Kitty
 - **Editor**: NeoVim
 - **Browser**: Firefox / Brave
