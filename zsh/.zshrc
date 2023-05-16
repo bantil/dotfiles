@@ -51,7 +51,7 @@ clbin() {
 }
 
 qrgen() {
-	qrencode "$1" -o /tmp/pog.png && xdg-open /tmp/pog.png
+	qrencode "$1" -o /tmp/qr.png && xdg-open /tmp/qr.png
 }
 
 # go alias
