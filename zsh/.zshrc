@@ -50,6 +50,10 @@ clbin() {
 	curl -F 'clbin=<-' https://clbin.com
 }
 
+qrgen() {
+	qrencode "$1" -o /tmp/pog.png && xdg-open /tmp/pog.png
+}
+
 # go alias
 export PATH="${HOME}/.local/bin:${PATH}"
 export PATH=$PATH:/usr/local/go/bin
