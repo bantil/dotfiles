@@ -1,0 +1,11 @@
+vim
+git
+zsh
+htop
+fortune
+figlet
+stow
+g++
+kitty
+terminator
+telegram-desktop

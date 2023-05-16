@@ -48,16 +48,18 @@
 
 ### ***Dependencies***
 
+#### ***Optional Dependencies***
+```
+# See makefile, however I usually use
+
+make install-deps-deb
+```
+
 - stow
 - g++
 - nvim 0.7.0+
 - oh-my-zsh
 - rofi
-
-```
-apt install stow
-apt install g++
-```
 
 Latest version of nvim can be downloaded from its git repo page.
 Synaptic package manager tends to have an outdated version that won't work with my plugins.
