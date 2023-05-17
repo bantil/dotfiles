@@ -37,6 +37,7 @@ alias dev='cd ~/projects'
 alias dots='cd ~/dotfiles'
 alias dps='docker ps'
 alias gclean='git reset --hard && git clean -fd'
+alias s='kitty +kitten ssh'
 
 dgo() {
 	docker exec -it --user www-data "$1" bash
