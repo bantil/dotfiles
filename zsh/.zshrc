@@ -40,7 +40,15 @@ alias gclean='git reset --hard && git clean -fd'
 alias s='kitty +kitten ssh'
 
 dgo() {
-	docker exec -it --user www-data "$1" bash
+	# default entering into container with root user unless otherwise specified
+	dockerUser="root"
+
+	if [ ! -z "$2" ]
+	then
+		dockerUser=$2
+	fi
+
+	docker exec -it --user "$2" "$1" bash
 }
 
 kgo() {
