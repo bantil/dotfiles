@@ -37,7 +37,7 @@
 
 ### ***Environment***
 
-- **Distro**: Linux Mint/Pop!_OS
+- **Distro**: Linux Mint
 - **Terminal**: Kitty
 - **Editor**: NeoVim
 - **Browser**: Firefox / Brave
@@ -54,17 +54,12 @@
 make install-deps-deb
 ```
 
-- stow
-- g++
 - nvim 0.7.0+
-- oh-my-zsh
-- rofi
 
 Latest version of nvim can be downloaded from its git repo page.
 Synaptic package manager tends to have an outdated version that won't work with my plugins.
 
-Make sure to install oh-my-zsh from official site.
-
+Rofi is installed, ensure to use whatever themes you wish :)
 
 ### ***Installation***
 1. Clone this directory to your home directory.
@@ -80,14 +75,3 @@ cd dotfiles/
 
 make all
 ```
-
-### ***Pop OS Extra Bootloader Configuration***
-Since PopOS uses systemd-boot, these instructions are for adding the Windows Boot Manager entry into the systemd-boot record. This will allow us to boot into windows and will also show the boot menu.
-1. ```sudo apt install os-prober```
-2. ```sudo os-prober```. The output is ```/dev/sdb1@/efi/Microsoft/Boot/bootmgfw.efi:Windows Boot Manager:Windows:efi```
-3. ```sudo mount /dev/sdb1 /mnt``` (you can find your drive in the first part of the os-prober's output)
-4. ```sudo cp -ax /mnt/EFI/Microsoft /boot/efi/EFI``` (you can find the folder after the word ```efi``` in os-prober's output. It's always ```Microsoft``` but you need capital ```EFI``` when copying.
-5. Add this line ```timeout 10``` at the end of ```sudo vim /boot/efi/loader/loader.conf```
-6. Reboot.
-
-<div align="center"><img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/footers/gray0_ctp_on_line.png"></div>

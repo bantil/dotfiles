@@ -4,8 +4,9 @@ zsh
 htop
 fortune
 figlet
+rofi
 stow
 g++
 kitty
-terminator
 telegram-desktop
+neofetch
