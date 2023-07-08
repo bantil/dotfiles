@@ -1,2 +1,5 @@
 [include]
 path = ~/.gitalias
+[user]
+	email = bantillon@pm.me
+	name = Brandon
