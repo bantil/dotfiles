@@ -10,3 +10,4 @@ g++
 kitty
 telegram-desktop
 neofetch
+hydrapaper
