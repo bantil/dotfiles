@@ -6,4 +6,5 @@ install-deps-deb:
 	sh install_zsh.sh
 
 install-deps-rhel:
-	xargs sudo dnf install -y <dependencies.txt
+	xargs sudo dnf install -y < dependencies.txt
+	sh install_zsh.sh
