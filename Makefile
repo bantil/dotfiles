@@ -6,5 +6,5 @@ install-deps-deb:
 	sh configure_system.sh
 
 install-deps-rhel:
-	xargs sudo dnf install -y < dependencies.txt
+	xargs sudo dnf install -y < dependencies-rhel.txt
 	sh configure_system.sh

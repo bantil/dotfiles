@@ -1,0 +1,13 @@
+vim
+git
+zsh
+htop
+fortune-mod
+figlet
+rofi
+stow
+g++
+telegram-desktop
+terminator
+neofetch
+hydrapaper
