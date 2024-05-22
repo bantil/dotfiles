@@ -7,7 +7,6 @@ figlet
 rofi
 stow
 g++
-telegram-desktop
 terminator
 neofetch
 hydrapaper
