@@ -1,10 +1,6 @@
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="mommy-ei"
 
 # Which plugins would you like to load?
@@ -37,7 +33,6 @@ alias dev='cd ~/projects'
 alias dots='cd ~/dotfiles'
 alias dps='docker ps'
 alias gclean='git reset --hard && git clean -fd'
-alias s='kitty +kitten ssh'
 
 dgo() {
 	# default entering into container with root user unless otherwise specified
@@ -57,10 +52,6 @@ kgo() {
 
 clbin() {
 	curl -F 'clbin=<-' https://clbin.com
-}
-
-qrgen() {
-	qrencode "$1" -o /tmp/qr.png && xdg-open /tmp/qr.png
 }
 
 # go alias
