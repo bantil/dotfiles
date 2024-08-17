@@ -8,3 +8,6 @@ install-deps-deb:
 install-deps-rhel:
 	xargs sudo dnf install -y < dependencies-rhel.txt
 	sh configure_system.sh
+
+install-deps-mac:
+	brew install
