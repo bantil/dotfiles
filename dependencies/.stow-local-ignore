@@ -1,0 +1,4 @@
+# stow will ignore any files in this file
+deb.txt
+mac.txt
+rhel.txt
