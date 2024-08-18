@@ -22,7 +22,6 @@
     <!-- - **[Screenshots](#screenshots)** -->
     - **[Environment](#environment)**
     - **[Dependencies](#dependencies)**
-    - **[Pop OS Extra Bootloader Configuration](#pop-os-extras)**
 
 <!-- ### ***Screenshots*** <details>
 <summary><b>Nord</b></summary>
@@ -37,41 +36,28 @@
 
 ### ***Environment***
 
-- **Distro**: Linux Mint
-- **Terminal**: Kitty
+- **Distro**: Mac OS 11 / Linux Mint
+- **Terminal**: Terminator/iTerm 2
 - **Editor**: NeoVim
-- **Browser**: Firefox / Brave
+- **Browser**: Firefox
 - **Shell**: Zsh
-- **App Laucher**: Rofi
+- **App Laucher**: Rofi/Finder
 - **Font**: JetBrainsMonoNFM
-
-### ***Dependencies***
-
-#### ***Optional Dependencies***
-```
-# See makefile, however I usually use
-
-make install-deps-deb
-```
-
-- nvim 0.7.0+
-
-Latest version of nvim can be downloaded from its git repo page.
-Synaptic package manager tends to have an outdated version that won't work with my plugins.
-
-Rofi is installed, ensure to use whatever themes you wish :)
 
 ### ***Installation***
 1. Clone this directory to your home directory.
 
 2. Run the makefile command to symbolically link all of the configurations to this repository.
 
+Dependencies are listed within the `dependencies/` directory.
+
 ### Example
 
-```
+```bash
 cd ~
 
 cd dotfiles/
 
+make install-deps-* # rhel, mac, or deb
 make all
 ```
