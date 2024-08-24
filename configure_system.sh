@@ -33,7 +33,6 @@ set_correct_dotfiles() {
     echo "Dotfiles set according to OS."
 }
 
-
 #######
 # run the command to install zshrc
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
