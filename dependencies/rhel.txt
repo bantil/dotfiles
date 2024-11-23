@@ -8,5 +8,5 @@ rofi
 stow
 g++
 terminator
-neofetch
+screenfetch
 hydrapaper

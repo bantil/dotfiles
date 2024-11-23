@@ -25,22 +25,26 @@ set_rtc_time() {
 # copy over the correct dotfiles depending on the operating system we're running
 set_correct_dotfiles() {
     if [[ "$OS_TYPE" == "Darwin" ]]; then
-        cp zsh/zshrc.mac zsh/.zshrc
+        rm -f ~/.zshrc && cp zsh/zshrc.mac zsh/.zshrc
     elif [[ "$OS_TYPE" == "Linux" ]]; then
-        cp zsh/zshrc.linux zsh/.zshrc
+        rm -f ~/.zshrc && cp zsh/zshrc.linux zsh/.zshrc
     fi
 
     echo "Dotfiles set according to OS."
 }
 
+set_rtc_time
+
 #######
 # run the command to install zshrc
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+
+set_correct_dotfiles
 
 # install homebrew
 if [[ "$OS_TYPE" == "Darwin" ]]; then
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
-set_rtc_time
-set_correct_dotfiles
+# change the shell at the end once everything is in place.
+chsh -s $(which zsh)

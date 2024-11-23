@@ -7,7 +7,7 @@ fortune
 gtk4
 helm
 imagemagick
-neofetch
+screenfetch
 neovim
 nmap
 nvm

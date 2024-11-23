@@ -9,5 +9,5 @@ stow
 g++
 telegram-desktop
 terminator
-neofetch
+screenfetch
 hydrapaper
