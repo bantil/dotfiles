@@ -40,7 +40,6 @@ cd ~
 
 cd dotfiles/
 
-make install-deps-<rhel,mac,deb>
 make all
 ```
 
