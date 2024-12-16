@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# check if the current host is mac or linux
 OS_TYPE=$(uname);
+USERNAME=$(whoami)
 
 # sets the RTC time to 1 to avoid inaccurate time when dual booting
 set_rtc_time() {
@@ -37,14 +37,17 @@ set_rtc_time
 
 #######
 # run the command to install zshrc
+
+echo "Installing oh my zsh..."
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 
 set_correct_dotfiles
 
-# install homebrew
+# install homebrew and dependencies
 if [[ "$OS_TYPE" == "Darwin" ]]; then
+    echo "Installing homebrew..."
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/$USERNAME/.zprofile
 fi
 
-# change the shell at the end once everything is in place.
-chsh -s $(which zsh)
+echo "All dependencies installed! Changing shell for the final step..."
