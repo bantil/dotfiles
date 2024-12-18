@@ -40,6 +40,7 @@ install_homebrew() {
         echo "Installing homebrew..."
         /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
         echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/$USERNAME/.zprofile
+        source /Users/$USERNAME/.zprofile
     fi
 }
 
@@ -57,6 +58,7 @@ install_dependencies() {
         xargs brew install < dependencies/mac.txt
     else
         echo "Unable to detect your package manager."
+        exit 1;
     fi
 }
 
