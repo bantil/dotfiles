@@ -18,7 +18,7 @@
 
 ## ***Environment***
 
-- **OS**: Mac OS 11 / Linux Mint
+- **OS**: Mac OS 11 / Linux Mint / Fedora 41
 - **Terminal**: iTerm 2 / Terminator
 - **Editor**: NeoVim
 - **Browser**: Firefox
